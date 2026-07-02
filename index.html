@@ -280,7 +280,7 @@
     let table = document.getElementById("sparepartTable");
     let tr = table.getElementsByTagName("tr");
     let buttons = document.getElementsByClassName("btn-filter");
-
+  }
     // Mengubah Tampilan Tombol
 
     for (let i = 0; i < buttons.length; i++) {
@@ -301,5 +301,85 @@
         tr[i].style.display = "none";
       }
     }
+
+    <!-- Commit 3 Menambahkan Customer Service Javascript   -->
+    
+    //Buka Tutup Jendela Chat
+    function toggleCSChat(){
+      const chatBox = document.getElementById("csChatBox");
+      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+      scrollToBottom();
+    }
+
+    // Deteksi Tombol Enter 
+    function handleKeyPress(event){
+      if (event.key === "Enter") {
+        sendMessage();
+    }
+
+    // Mengirim Pesan Dummy
+    function sendMessage(){
+      const inputElement = document.getElementById("csInputText");
+      const messageText = inputElement.value.trim();
+
+      if (messageText === "") return;
+
+      appendMessage(messageText, "user");
+      inputElement.value = ""; // Reset input
+
+      // jeda Mengirim Pesan
+    setTimeout(() => {
+      generateBotResponse(messageText);
+    }, 8000);
   }
+    // Memasukkan gelembung chat ke dalam kotak
+  function appendMessage(text, sender) {
+    const chatBody = document.getElementById("csChatBody");
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("cs-msg", sender === "user" ? "msg-user" : "msg-bot");
+    msgDiv.innerHTML = text;
+
+    chatBody.appendChild(msgDiv);
+    scrollToBottom();
+  }
+
+  // Autoscroll ke pesan paling baru
+  function scrollToBottom() {
+    const chatBody = document.getElementById("csChatBody");
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  // Logika Berbasis Kata Kunci Baru
+  function generateBotResponse(userText) {
+    const text = userText.toLowerCase();
+    let reply = "";
+
+    // Deteksi untuk cek barang ready
+    if (
+      text.includes("barang") ||
+      text.includes("ready") ||
+      text.includes("stok")
+    ) {
+      reply =
+        "Saat ini produk dan kelengkapan di CingMotor sebagian besar ready stock, kak! Kakak sedang mencari barang atau aksesoris spesifik apa?";
+
+      // Deteksi untuk lokasi toko
+    } else if (
+      text.includes("lokasi") ||
+      text.includes("alamat") ||
+      text.includes("toko")
+    ) {
+      reply =
+        "Toko kami berlokasi di area Kota Medan. Kami buka setiap Senin-Sabtu dari jam 08.00 s/d 17.00 WIB. Silahkan datang langsung ya!";
+
+      // Fallback jika mengetik hal lain
+    } else {
+      reply =
+        "Maaf, sistem otomatis kami belum mengenali pertanyaan tersebut. Mohon tunggu sebentar atau kakak bisa <a href='https://wa.me/628123456789' target='_blank' style='color:#d35400; font-weight:bold;'>Hubungi Admin via WhatsApp</a> untuk respon langsung.";
+    }
+
+    appendMessage(reply, "bot");
+  }
+  }
+
 </script>
