@@ -224,37 +224,82 @@
         </div>
       </div>
     </footer>
+
+    <!-- Commit 4 Menambahkan Chat Customer Service
+  -->
+    <div class="cs-floating-button" onclick="toggleCSChat()">🤖</div>
+
+    <!-- Pop up chat box -->
+    <div class="cs-chat-box" id="csChatBox">
+      <div class="cs-chat-header">
+        <div class="cs-admin-info">
+          <div class="cs-avatar">CM</div>
+          <div>
+            <h4>CS CingMotor</h4>
+            <small>● Online</small>
+          </div>
+        </div>
+        <span class="cs-close-btn" onclick="toggleCSChat()">&times;</span>
+      </div>
+
+      <!-- Area Pesan (Tempat chat muncul) -->
+      <div class="cs-chat-body" id="csChatBody">
+        <div class="cs-msg msg-bot">
+          Halo! Selamat datang di CingMotor. Ada yang bisa kami bantu hari ini?
+          Silahkan pilih menu di bawah atau ketik pertanyaanmu:
+          <!-- Menu yang sudah diubah sesuai image_88823d.png -->
+          <div class="cs-quick-replies">
+            <button onclick="sendQuickReply('Cek barang ready')">
+              📦 Cek Barang Ready
+            </button>
+            <button onclick="sendQuickReply('Lokasi toko CingMotor')">
+              📍 Lokasi Toko
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Pesan -->
+      <div class="cs-chat-footer-input">
+        <input
+          type="text"
+          id="csInputText"
+          placeholder="Ketik pesan di sini..."
+          onkeypress="handleKeyPress(event)"
+        />
+        <button onclick="sendMessage()">Kirim</button>
+      </div>
+    </div>
   </body>
 </html>
 
 <!-- Commit 3 Menambahkan Filter Table Javascript   -->
 
 <script>
-function filterTable(category) {
-  let table = document.getElementById("sparepartTable");
-  let tr = table.getElementsByTagName("tr");
-  let buttons = document.getElementsByClassName("btn-filter");
+  function filterTable(category) {
+    let table = document.getElementById("sparepartTable");
+    let tr = table.getElementsByTagName("tr");
+    let buttons = document.getElementsByClassName("btn-filter");
 
-  // Mengubah Tampilan Tombol
-  
+    // Mengubah Tampilan Tombol
+
     for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("active");
-        if (buttons[i].innerText.toLowerCase() === category) {
-            buttons[i].classList.add("active");
-        }
+      buttons[i].classList.remove("active");
+      if (buttons[i].innerText.toLowerCase() === category) {
+        buttons[i].classList.add("active");
+      }
     }
 
-  // Membuat Filter Baris Tabel
+    // Membuat Filter Baris Tabel
 
     for (let i = 1; i < tr.length; i++) {
-        let productCat = tr[i].getAttribute("data-category");
-        
-        if (category === "semua" || productCat === category) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
-        }
-    }
+      let productCat = tr[i].getAttribute("data-category");
 
-}
+      if (category === "semua" || productCat === category) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
 </script>

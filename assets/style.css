@@ -568,6 +568,175 @@ html {
   animation: zoomIn 0.5s ease-out;
 }
 
+/* <!-- Commit 4 Menambahkan Chat Customer Service */
+
+/* Tombol Customer Service */
+.cs-floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #e67e22;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
+}
+.cs-floating-button:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Box */
+.cs-chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 450px;
+  background-color: #f4f6f9;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Customer Service */
+.cs-chat-header {
+  background-color: #d35400;
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cs-admin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-avatar {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #d35400;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+.cs-chat-header h4 {
+  margin: 0;
+  font-size: 15px;
+}
+.cs-chat-header small {
+  color: #2ecc71;
+  font-size: 11px;
+  display: block;
+}
+.cs-close-btn {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* Body Area Chat */
+.cs-chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chat Bubbles */
+.cs-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+.msg-bot {
+  background-color: white;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.msg-user {
+  background-color: #e67e22;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Quick Reply */
+.cs-quick-replies {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+.cs-quick-replies button {
+  background: #fff;
+  border: 1px solid #e67e22;
+  color: #e67e22;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+.cs-quick-replies button:hover {
+  background: #e67e22;
+  color: white;
+}
+
+/* Footer Input */
+.cs-chat-footer-input {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #eee;
+}
+.cs-chat-footer-input input {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 13px;
+}
+.cs-chat-footer-input button {
+  background: #d35400;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+.cs-chat-footer-input button:hover {
+  background: #b34700;
+}
+
 @keyframes zoomIn {
   from {
     opacity: 0;
