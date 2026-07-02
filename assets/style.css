@@ -577,7 +577,7 @@ html {
   right: 20px;
   width: 60px;
   height: 60px;
-  background-color: #e67e22;
+  background-color: var(--dark-color);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -612,7 +612,7 @@ html {
 
 /* Header Customer Service */
 .cs-chat-header {
-  background-color: #d35400;
+  background-color: var(--dark-color);
   color: white;
   padding: 12px 15px;
   display: flex;
@@ -677,7 +677,7 @@ html {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 .msg-user {
-  background-color: #e67e22;
+  background-color: var(--dark-color);
   color: white;
   align-self: flex-end;
   border-bottom-right-radius: 2px;
@@ -723,7 +723,7 @@ html {
   font-size: 13px;
 }
 .cs-chat-footer-input button {
-  background: #d35400;
+  background: var(--dark-color);
   color: white;
   border: none;
   padding: 0 15px;

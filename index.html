@@ -225,8 +225,7 @@
       </div>
     </footer>
 
-    <!-- Commit 4 Menambahkan Chat Customer Service
-  -->
+    <!-- Commit 4 Menambahkan Chat Customer Service-->
     <div class="cs-floating-button" onclick="toggleCSChat()">🤖</div>
 
     <!-- Pop up chat box -->
@@ -281,58 +280,69 @@
     let tr = table.getElementsByTagName("tr");
     let buttons = document.getElementsByClassName("btn-filter");
   }
-    // Mengubah Tampilan Tombol
+  // Mengubah Tampilan Tombol
 
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("active");
-      if (buttons[i].innerText.toLowerCase() === category) {
-        buttons[i].classList.add("active");
-      }
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("active");
+    if (buttons[i].innerText.toLowerCase() === category) {
+      buttons[i].classList.add("active");
     }
+  }
 
-    // Membuat Filter Baris Tabel
+  // Membuat Filter Baris Tabel
 
-    for (let i = 1; i < tr.length; i++) {
-      let productCat = tr[i].getAttribute("data-category");
+  for (let i = 1; i < tr.length; i++) {
+    let productCat = tr[i].getAttribute("data-category");
 
-      if (category === "semua" || productCat === category) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
+    if (category === "semua" || productCat === category) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
     }
+  }
 
-    <!-- Commit 3 Menambahkan Customer Service Javascript   -->
-    
-    //Buka Tutup Jendela Chat
-    function toggleCSChat(){
-      const chatBox = document.getElementById("csChatBox");
-      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
-      scrollToBottom();
+  // <!-- Commit 5 Menambahkan Customer Service Javascript   -->
+  //   Commit 6 memperbaiki bagian Customer Service Javascript
+
+  // Buka Tutup Jendela Chat
+  function toggleCSChat() {
+    const chatBox = document.getElementById("csChatBox");
+    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+    scrollToBottom();
+  }
+
+  // Deteksi tombol Enter saat mengetik
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      sendMessage();
     }
+  }
 
-    // Deteksi Tombol Enter 
-    function handleKeyPress(event){
-      if (event.key === "Enter") {
-        sendMessage();
-    }
+  // Fungsi utama mengirim pesan dari input teks
+  function sendMessage() {
+    const inputElement = document.getElementById("csInputText");
+    const messageText = inputElement.value.trim();
 
-    // Mengirim Pesan Dummy
-    function sendMessage(){
-      const inputElement = document.getElementById("csInputText");
-      const messageText = inputElement.value.trim();
+    if (messageText === "") return;
 
-      if (messageText === "") return;
+    appendMessage(messageText, "user");
+    inputElement.value = ""; // Reset input
 
-      appendMessage(messageText, "user");
-      inputElement.value = ""; // Reset input
-
-      // jeda Mengirim Pesan
+    // Berikan jeda efek mengetik seolah direspon admin asli
     setTimeout(() => {
       generateBotResponse(messageText);
     }, 8000);
   }
-    // Memasukkan gelembung chat ke dalam kotak
+
+  // Fungsi jika user mengklik menu pilihan cepat (Quick Reply)
+  function sendQuickReply(text) {
+    appendMessage(text, "user");
+    setTimeout(() => {
+      generateBotResponse(text);
+    }, 600);
+  }
+
+  // Memasukkan gelembung chat ke dalam kotak
   function appendMessage(text, sender) {
     const chatBody = document.getElementById("csChatBody");
     const msgDiv = document.createElement("div");
@@ -380,6 +390,4 @@
 
     appendMessage(reply, "bot");
   }
-  }
-
 </script>
