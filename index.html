@@ -226,3 +226,35 @@
     </footer>
   </body>
 </html>
+
+<!-- Commit 3 Menambahkan Filter Table Javascript   -->
+
+<script>
+function filterTable(category) {
+  let table = document.getElementById("sparepartTable");
+  let tr = table.getElementsByTagName("tr");
+  let buttons = document.getElementsByClassName("btn-filter");
+
+  // Mengubah Tampilan Tombol
+  
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+        if (buttons[i].innerText.toLowerCase() === category) {
+            buttons[i].classList.add("active");
+        }
+    }
+
+  // Membuat Filter Baris Tabel
+
+    for (let i = 1; i < tr.length; i++) {
+        let productCat = tr[i].getAttribute("data-category");
+        
+        if (category === "semua" || productCat === category) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+
+}
+</script>
