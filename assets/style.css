@@ -458,32 +458,7 @@ body {
   transform: rotate(20deg); /* Animasi kecil pada ikon saat aktif */
 }
 
-/* Label Status Stok */
-.status {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.status.ready {
-  background: #d4edda;
-  color: #155724;
-}
-
-.status.limited {
-  background: #fff3cd;
-  color: #856404;
-}
-
-.status.out {
-  background: #f8d7da;
-  color: #721c24;
-}
-
 /* maps section */
-
 .store-location {
   padding: 60px 8%;
   background-color: #fff;
@@ -513,6 +488,30 @@ body {
 .address-details i {
   color: #e67e22; /* Warna orange CingMotor */
   margin-right: 8px;
+}
+
+/* Label Status Stok */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status.ready {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.limited {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.out {
+  background: #f8d7da;
+  color: #721c24;
 }
 
 /* Footer */
