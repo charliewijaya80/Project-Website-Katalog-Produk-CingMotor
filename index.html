@@ -279,46 +279,39 @@
     let table = document.getElementById("sparepartTable");
     let tr = table.getElementsByTagName("tr");
     let buttons = document.getElementsByClassName("btn-filter");
-  }
-  // Mengubah Tampilan Tombol
 
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove("active");
-    if (buttons[i].innerText.toLowerCase() === category) {
-      buttons[i].classList.add("active");
+    // 1. Mengubah Tampilan Tombol Aktif
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
+      // Menggunakan .trim() untuk menghapus spasi bawaan dari icon
+      if (buttons[i].innerText.toLowerCase().trim() === category) {
+        buttons[i].classList.add("active");
+      }
+    }
+
+    // 2. Membuat Filter Baris Tabel
+    for (let i = 1; i < tr.length; i++) {
+      let productCat = tr[i].getAttribute("data-category");
+
+      if (category === "semua" || productCat === category) {
+        tr[i].style.display = ""; // Tampilkan baris
+      } else {
+        tr[i].style.display = "none"; // Sembunyikan baris
+      }
     }
   }
-
-  // Membuat Filter Baris Tabel
-
-  for (let i = 1; i < tr.length; i++) {
-    let productCat = tr[i].getAttribute("data-category");
-
-    if (category === "semua" || productCat === category) {
-      tr[i].style.display = "";
-    } else {
-      tr[i].style.display = "none";
-    }
-  }
-
-  // <!-- Commit 5 Menambahkan Customer Service Javascript   -->
-  //   Commit 6 memperbaiki bagian Customer Service Javascript
-
-  // Buka Tutup Jendela Chat
   function toggleCSChat() {
     const chatBox = document.getElementById("csChatBox");
     chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
     scrollToBottom();
   }
 
-  // Deteksi tombol Enter saat mengetik
   function handleKeyPress(event) {
     if (event.key === "Enter") {
       sendMessage();
     }
   }
 
-  // Fungsi utama mengirim pesan dari input teks
   function sendMessage() {
     const inputElement = document.getElementById("csInputText");
     const messageText = inputElement.value.trim();
@@ -326,15 +319,13 @@
     if (messageText === "") return;
 
     appendMessage(messageText, "user");
-    inputElement.value = ""; // Reset input
+    inputElement.value = "";
 
-    // Berikan jeda efek mengetik seolah direspon admin asli
     setTimeout(() => {
       generateBotResponse(messageText);
-    }, 8000);
+    }, 1000); // Dijeda 1 detik agar simulasi mengetik lebih natural
   }
 
-  // Fungsi jika user mengklik menu pilihan cepat (Quick Reply)
   function sendQuickReply(text) {
     appendMessage(text, "user");
     setTimeout(() => {
@@ -342,7 +333,6 @@
     }, 600);
   }
 
-  // Memasukkan gelembung chat ke dalam kotak
   function appendMessage(text, sender) {
     const chatBody = document.getElementById("csChatBody");
     const msgDiv = document.createElement("div");
@@ -353,18 +343,15 @@
     scrollToBottom();
   }
 
-  // Autoscroll ke pesan paling baru
   function scrollToBottom() {
     const chatBody = document.getElementById("csChatBody");
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  // Logika Berbasis Kata Kunci Baru
   function generateBotResponse(userText) {
     const text = userText.toLowerCase();
     let reply = "";
 
-    // Deteksi untuk cek barang ready
     if (
       text.includes("barang") ||
       text.includes("ready") ||
@@ -372,8 +359,6 @@
     ) {
       reply =
         "Saat ini produk dan kelengkapan di CingMotor sebagian besar ready stock, kak! Kakak sedang mencari barang atau aksesoris spesifik apa?";
-
-      // Deteksi untuk lokasi toko
     } else if (
       text.includes("lokasi") ||
       text.includes("alamat") ||
@@ -381,8 +366,6 @@
     ) {
       reply =
         "Toko kami berlokasi di area Kota Medan. Kami buka setiap Senin-Sabtu dari jam 08.00 s/d 17.00 WIB. Silahkan datang langsung ya!";
-
-      // Fallback jika mengetik hal lain
     } else {
       reply =
         "Maaf, sistem otomatis kami belum mengenali pertanyaan tersebut. Mohon tunggu sebentar atau kakak bisa <a href='https://wa.me/628123456789' target='_blank' style='color:#d35400; font-weight:bold;'>Hubungi Admin via WhatsApp</a> untuk respon langsung.";
