@@ -86,8 +86,7 @@ body {
 /* Hero Section */
 .hero {
   height: 80vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("image/background-store.jpeg");
   background-size: cover;
   background-position: center;
@@ -779,4 +778,30 @@ html {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+/* COMMIT 9 MENAMBAHKAN TOMBOL KEMBALI KE ATAS PADA POJOK KIRI BAWAH */
+
+/* Tombol Kembali ke Atas (Back to Top) */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #e67e22;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
 }

@@ -1,275 +1,260 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CingMotor</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="brand-group">
-          <img
-            src="assets/image/CingMotor.jpg"
-            width="9%"
-            alt="Logo CingMotor"
-            class="logo-img"
-          />
-          <div class="logo">Cing<span>Motor</span></div>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#produk">Produk</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="hero-content">
-        <h1>
-          Solusi Sparepart Motor, <br /><span
-            >Tinggal Klik Langsung Sampai!</span
-          >
-        </h1>
-        <p>
-          Temukan ribuan komponen original dan aftermarket terlengkap dengan
-          harga kompetitif untuk semua jenis kendaraan.
-        </p>
-        <div class="hero-buttons">
-          <a href="contactus.html" target="blank" class="btn-secondary"
-            ><i class="fas fa-envelope"></i> Contact Us</a
-          >
-        </div>
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CingMotor</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
 
-    <section class="features">
-      <div class="feature-box">
-        <i class="fas fa-box-open"></i>
-        <h3>Stok Terlengkap</h3>
-        <p>Tersedia untuk berbagai merk motor.</p>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand-group">
+        <img src="assets/image/CingMotor.jpg" width="9%" alt="Logo CingMotor" class="logo-img" />
+        <div class="logo">Cing<span>Motor</span></div>
       </div>
-      <div class="feature-box">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Garansi Resmi</h3>
-        <p>Jaminan kualitas produk dan uang kembali.</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-truck"></i>
-        <h3>Pengiriman Cepat</h3>
-        <p>Bekerja sama dengan ekspedisi terbaik.</p>
-      </div>
-    </section>
+      <ul class="nav-links">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="produk" class="best-seller">
-      <h2 class="section-title">Produk Terlaris</h2>
-      <p class="section-subtitle">
-        Koleksi sparepart paling banyak dicari oleh pelanggan kami
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Solusi Sparepart Motor, <br /><span>Tinggal Klik Langsung Sampai!</span>
+      </h1>
+      <p>
+        Temukan ribuan komponen original dan aftermarket terlengkap dengan
+        harga kompetitif untuk semua jenis kendaraan.
       </p>
-
-      <div class="seller-grid">
-        <div class="seller-card">
-          <div class="seller-img">
-            <img src="assets/image/gear.png" alt="Gear Paket" />
-          </div>
-          <h4>Gear Paket dengan Rantai</h4>
-          <span class="tag-trending">Hot Item</span>
-        </div>
-
-        <div class="seller-card">
-          <div class="seller-img">
-            <img src="assets/image/kampas.jpg" alt="Kampas Rem" />
-          </div>
-          <h4>Kampas Rem Keramik</h4>
-          <span class="tag-trending">Best Quality</span>
-        </div>
-
-        <div class="seller-card">
-          <div class="seller-img">
-            <img src="assets/image/shock.png" alt="Shock Breaker" />
-          </div>
-          <h4>Shockbreaker Belakang</h4>
-          <span class="tag-trending">Top Seller</span>
-        </div>
-
-        <div class="seller-card">
-          <div class="seller-img">
-            <img src="assets/image/tangki.png" alt="Fuel Tank" />
-          </div>
-          <h4>Fuel Tank</h4>
-          <span class="tag-trending">Most Wanted</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="table-section">
-      <h2 class="section-title">Katalog Stok Berdasarkan Kategori</h2>
-      <p class="section-subtitle">
-        Pilih kategori untuk melihat daftar sparepart yang tersedia
-      </p>
-
-      <div class="filter-group">
-        <button class="btn-filter active" onclick="filterTable('semua')">
-          <i class="fas fa-th-large"></i> Semua
-        </button>
-        <button class="btn-filter" onclick="filterTable('mesin')">
-          <i class="fas fa-cogs"></i> Mesin
-        </button>
-        <button class="btn-filter" onclick="filterTable('pengereman')">
-          <i class="fas fa-ring"></i> Pengereman
-        </button>
-        <button class="btn-filter" onclick="filterTable('oli')">
-          <i class="fas fa-oil-can"></i> Oli
-        </button>
-      </div>
-
-      <div class="table-container">
-        <table class="styled-table" id="sparepartTable">
-          <thead>
-            <tr>
-              <th>SKU</th>
-              <th>Nama Produk</th>
-              <th>Merek</th>
-              <th>Kategori</th>
-              <th>Harga</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-category="pengereman">
-              <td><strong>43130KZL930</strong></td>
-              <td>Kampas Rem Belakang Honda Beat</td>
-              <td><span class="brand-name">HONDA</span></td>
-              <td>Pengereman</td>
-              <td>Rp 65.500</td>
-              <td><span class="status ready">Ready</span></td>
-            </tr>
-            <tr data-category="oli">
-              <td><strong>082322MAK1LN1</strong></td>
-              <td>AHM Oil MPX1 1 L 10W-30 IDE</td>
-              <td><span class="brand-name">HONDA</span></td>
-              <td>Oli</td>
-              <td>Rp 81.000</td>
-              <td><span class="status ready">Ready</span></td>
-            </tr>
-            <tr data-category="pengereman">
-              <td><strong>06455KVBT01</strong></td>
-              <td>Kampas Rem Depan Honda Beat / Scoopy</td>
-              <td><span class="brand-name">HONDA</span></td>
-              <td>Pengereman</td>
-              <td>Rp 55.400</td>
-              <td><span class="status out">Habis</span></td>
-            </tr>
-            <tr data-category="mesin">
-              <td><strong>B6HH14100000</strong></td>
-              <td>Spul Assy Stator Comp</td>
-              <td><span class="brand-name">YAMAHA</span></td>
-              <td>Mesin</td>
-              <td>Rp 850.000</td>
-              <td><span class="status limited">Terbatas</span></td>
-            </tr>
-            <tr data-category="mesin">
-              <td><strong>933102164300</strong></td>
-              <td>Piston Kit Seher RXS</td>
-              <td><span class="brand-name">YAMAHA</span></td>
-              <td>Mesin</td>
-              <td>Rp 143.000</td>
-              <td><span class="status ready">Ready</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="store-location">
-      <h2 class="section-title">Lokasi Toko Kami</h2>
-      <p class="section-subtitle">
-        Kunjungi toko kami untuk pencarian sparepart yang berkualitas
-      </p>
-
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.921033254808!2d98.62002664031196!3d3.6055514289908954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f005fdd91c9%3A0x2de1413b4e0e490d!2sCing%20Motor!5e0!3m2!1sid!2sid!4v1776403284550!5m2!1sid!2sid"
-          width="100%"
-          height="450"
-          style="border: 0"
-          loading="lazy"
-          refferpolicy="no-referrer-when-downgrade"
-        >
-        </iframe>
-      </div>
-
-      <div class="address-details">
-        <p>
-          <i class="fas fa-map-marker-alt"></i> Jl. Gaperta Ujung Sebelah
-          Komplek Town House
-        </p>
-        <p><i class="fas fa-clock"></i> Buka Setiap Hari: 08.00 - 17.00 WIB</p>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2025 CingMotor</p>
-        <div class="socials">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Commit 4 Menambahkan Chat Customer Service-->
-    <div class="cs-floating-button" onclick="toggleCSChat()">🤖</div>
-
-    <!-- Pop up chat box -->
-    <div class="cs-chat-box" id="csChatBox">
-      <div class="cs-chat-header">
-        <div class="cs-admin-info">
-          <div class="cs-avatar">CM</div>
-          <div>
-            <h4>CS CingMotor</h4>
-            <small>● Online</small>
-          </div>
-        </div>
-        <span class="cs-close-btn" onclick="toggleCSChat()">&times;</span>
-      </div>
-
-      <!-- Area Pesan (Tempat chat muncul) -->
-      <div class="cs-chat-body" id="csChatBody">
-        <div class="cs-msg msg-bot">
-          Halo! Selamat datang di CingMotor. Ada yang bisa kami bantu hari ini?
-          Silahkan pilih menu di bawah atau ketik pertanyaanmu:
-          <!-- Menu yang sudah diubah sesuai image_88823d.png -->
-          <div class="cs-quick-replies">
-            <button onclick="sendQuickReply('Cek barang ready')">
-              📦 Cek Barang Ready
-            </button>
-            <button onclick="sendQuickReply('Lokasi toko CingMotor')">
-              📍 Lokasi Toko
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Input Pesan -->
-      <div class="cs-chat-footer-input">
-        <input
-          type="text"
-          id="csInputText"
-          placeholder="Ketik pesan di sini..."
-          onkeypress="handleKeyPress(event)"
-        />
-        <button onclick="sendMessage()">Kirim</button>
+      <div class="hero-buttons">
+        <a href="contactus.html" target="blank" class="btn-secondary"><i class="fas fa-envelope"></i> Contact Us</a>
       </div>
     </div>
-  </body>
+  </section>
+
+  <section class="features">
+    <div class="feature-box">
+      <i class="fas fa-box-open"></i>
+      <h3>Stok Terlengkap</h3>
+      <p>Tersedia untuk berbagai merk motor.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Garansi Resmi</h3>
+      <p>Jaminan kualitas produk dan uang kembali.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-truck"></i>
+      <h3>Pengiriman Cepat</h3>
+      <p>Bekerja sama dengan ekspedisi terbaik.</p>
+    </div>
+  </section>
+
+  <section id="produk" class="best-seller">
+    <h2 class="section-title">Produk Terlaris</h2>
+    <p class="section-subtitle">
+      Koleksi sparepart paling banyak dicari oleh pelanggan kami
+    </p>
+
+    <div class="seller-grid">
+      <div class="seller-card">
+        <div class="seller-img">
+          <img src="assets/image/gear.png" alt="Gear Paket" />
+        </div>
+        <h4>Gear Paket dengan Rantai</h4>
+        <span class="tag-trending">Hot Item</span>
+      </div>
+
+      <div class="seller-card">
+        <div class="seller-img">
+          <img src="assets/image/kampas.jpg" alt="Kampas Rem" />
+        </div>
+        <h4>Kampas Rem Keramik</h4>
+        <span class="tag-trending">Best Quality</span>
+      </div>
+
+      <div class="seller-card">
+        <div class="seller-img">
+          <img src="assets/image/shock.png" alt="Shock Breaker" />
+        </div>
+        <h4>Shockbreaker Belakang</h4>
+        <span class="tag-trending">Top Seller</span>
+      </div>
+
+      <div class="seller-card">
+        <div class="seller-img">
+          <img src="assets/image/tangki.png" alt="Fuel Tank" />
+        </div>
+        <h4>Fuel Tank</h4>
+        <span class="tag-trending">Most Wanted</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <h2 class="section-title">Katalog Stok Berdasarkan Kategori</h2>
+    <p class="section-subtitle">
+      Pilih kategori untuk melihat daftar sparepart yang tersedia
+    </p>
+
+    <div class="filter-group">
+      <button class="btn-filter active" onclick="filterTable('semua')">
+        <i class="fas fa-th-large"></i> Semua
+      </button>
+      <button class="btn-filter" onclick="filterTable('mesin')">
+        <i class="fas fa-cogs"></i> Mesin
+      </button>
+      <button class="btn-filter" onclick="filterTable('pengereman')">
+        <i class="fas fa-ring"></i> Pengereman
+      </button>
+      <button class="btn-filter" onclick="filterTable('oli')">
+        <i class="fas fa-oil-can"></i> Oli
+      </button>
+    </div>
+
+    <div class="table-container">
+      <table class="styled-table" id="sparepartTable">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Nama Produk</th>
+            <th>Merek</th>
+            <th>Kategori</th>
+            <th>Harga</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-category="pengereman">
+            <td><strong>43130KZL930</strong></td>
+            <td>Kampas Rem Belakang Honda Beat</td>
+            <td><span class="brand-name">HONDA</span></td>
+            <td>Pengereman</td>
+            <td>Rp 65.500</td>
+            <td><span class="status ready">Ready</span></td>
+          </tr>
+          <tr data-category="oli">
+            <td><strong>082322MAK1LN1</strong></td>
+            <td>AHM Oil MPX1 1 L 10W-30 IDE</td>
+            <td><span class="brand-name">HONDA</span></td>
+            <td>Oli</td>
+            <td>Rp 81.000</td>
+            <td><span class="status ready">Ready</span></td>
+          </tr>
+          <tr data-category="pengereman">
+            <td><strong>06455KVBT01</strong></td>
+            <td>Kampas Rem Depan Honda Beat / Scoopy</td>
+            <td><span class="brand-name">HONDA</span></td>
+            <td>Pengereman</td>
+            <td>Rp 55.400</td>
+            <td><span class="status out">Habis</span></td>
+          </tr>
+          <tr data-category="mesin">
+            <td><strong>B6HH14100000</strong></td>
+            <td>Spul Assy Stator Comp</td>
+            <td><span class="brand-name">YAMAHA</span></td>
+            <td>Mesin</td>
+            <td>Rp 850.000</td>
+            <td><span class="status limited">Terbatas</span></td>
+          </tr>
+          <tr data-category="mesin">
+            <td><strong>933102164300</strong></td>
+            <td>Piston Kit Seher RXS</td>
+            <td><span class="brand-name">YAMAHA</span></td>
+            <td>Mesin</td>
+            <td>Rp 143.000</td>
+            <td><span class="status ready">Ready</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="store-location">
+    <h2 class="section-title">Lokasi Toko Kami</h2>
+    <p class="section-subtitle">
+      Kunjungi toko kami untuk pencarian sparepart yang berkualitas
+    </p>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.921033254808!2d98.62002664031196!3d3.6055514289908954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312f005fdd91c9%3A0x2de1413b4e0e490d!2sCing%20Motor!5e0!3m2!1sid!2sid!4v1776403284550!5m2!1sid!2sid"
+        width="100%" height="450" style="border: 0" loading="lazy" refferpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="address-details">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Jl. Gaperta Ujung Sebelah
+        Komplek Town House
+      </p>
+      <p><i class="fas fa-clock"></i> Buka Setiap Hari: 08.00 - 17.00 WIB</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CingMotor</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Commit 4 Menambahkan Chat Customer Service-->
+  <div class="cs-floating-button" onclick="toggleCSChat()">🤖</div>
+
+  <!-- Pop up chat box -->
+  <div class="cs-chat-box" id="csChatBox">
+    <div class="cs-chat-header">
+      <div class="cs-admin-info">
+        <div class="cs-avatar">CM</div>
+        <div>
+          <h4>CS CingMotor</h4>
+          <small>● Online</small>
+        </div>
+      </div>
+      <span class="cs-close-btn" onclick="toggleCSChat()">&times;</span>
+    </div>
+
+    <!-- Area Pesan (Tempat chat muncul) -->
+    <div class="cs-chat-body" id="csChatBody">
+      <div class="cs-msg msg-bot">
+        Halo! Selamat datang di CingMotor. Ada yang bisa kami bantu hari ini?
+        Silahkan pilih menu di bawah atau ketik pertanyaanmu:
+        <!-- Menu yang sudah diubah sesuai image_88823d.png -->
+        <div class="cs-quick-replies">
+          <button onclick="sendQuickReply('Cek barang ready')">
+            📦 Cek Barang Ready
+          </button>
+          <button onclick="sendQuickReply('Lokasi toko CingMotor')">
+            📍 Lokasi Toko
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Pesan -->
+    <div class="cs-chat-footer-input">
+      <input type="text" id="csInputText" placeholder="Ketik pesan di sini..." onkeypress="handleKeyPress(event)" />
+      <button onclick="sendMessage()">Kirim</button>
+    </div>
+  </div>
+  <!-- COMMIT 9 MENAMBAHKAN TOMBOL KEMBALI KE ATAS PADA POJOK KIRI BAWAH  -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+</body>
+
 </html>
 
 <!-- Commit 3 Menambahkan Filter Table Javascript   -->
