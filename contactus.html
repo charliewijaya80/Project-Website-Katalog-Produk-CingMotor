@@ -1,56 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CingMotor</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <title>Hubungi Kami - CingMotor</title>
+
+    <!-- COMMIT 11 MENAMBAHKAN TAILWIND PADA PAGE CONTACT US-->
+    <!-- Integrasi Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Konfigurasi Warna Asli CingMotor Anda -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e67e22',
+                        primaryHover: '#d35400',
+                        dark: '#2c3e50',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
 
-<section id="contact-us" class="contact-section">
-    <h2 class="section-title">Hubungi Kami</h2>
-    <p>Silakan isi formulir di bawah ini, tim kami akan segera menghubungi Anda.</p>
-    
-    <div class="contact-container">
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Alamat Email</label>
-                <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-            </div>
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col justify-between text-gray-800">
 
-            <div class="form-group">
-                <label for="phone">Nomor Telepon</label>
-                <input type="tel" id="phone" name="phone" placeholder="Contoh: 08123456789" required>
-            </div>
+    <!-- Section Contact Us Modern dengan Tailwind -->
+    <section id="contact-us" class="py-16 px-[4%] max-w-4xl mx-auto w-full flex-1 flex flex-col justify-center">
+        <div class="text-center mb-10">
+            <!-- Judul dengan garis bawah khas CingMotor -->
+            <h2
+                class="text-3xl font-bold text-dark mb-2 relative inline-block after:content-[''] after:w-16 after:h-1 after:bg-primary after:block after:mx-auto after:mt-3">
+                Hubungi Kami
+            </h2>
+            <p class="text-gray-500 text-sm mt-4">Silakan isi formulir di bawah ini, tim kami akan segera menghubungi
+                Anda.</p>
+        </div>
 
-            <div class="form-group">
-                <label for="message">Pesan</label>
-                <textarea id="message" name="message" rows="3" placeholder="Masukkan pesan"></textarea>
-            </div>
+        <!-- Wadah Formulir (Card) -->
+        <div
+            class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 max-w-xl mx-auto w-full transform transition hover:scale-[1.01] duration-300">
+            <form class="space-y-5">
 
-            <button type="submit" class="btn-submit" formaction="thankyou.html">Kirim Pesan</button>
-        </form>
-    </div>
-</section>
+                <!-- Input Nama -->
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-dark mb-1.5">Nama Lengkap</label>
+                    <div class="relative">
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl outline-none text-sm focus:border-primary focus:ring-2 focus:ring-orange-100 transition duration-200">
+                        <i class="fas fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    </div>
+                </div>
 
+                <!-- Input Email -->
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-dark mb-1.5">Alamat Email</label>
+                    <div class="relative">
+                        <input type="email" id="email" name="email" placeholder="ericsanjaya@email.com" required
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl outline-none text-sm focus:border-primary focus:ring-2 focus:ring-orange-100 transition duration-200">
+                        <i class="fas fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    </div>
+                </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 CingMotor. Semua Hak Dilindungi.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <!-- Input Telepon -->
+                <div>
+                    <label for="phone" class="block text-sm font-semibold text-dark mb-1.5">Nomor Telepon</label>
+                    <div class="relative">
+                        <input type="tel" id="phone" name="phone" placeholder="Contoh: 089509200980" required
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl outline-none text-sm focus:border-primary focus:ring-2 focus:ring-orange-100 transition duration-200">
+                        <i class="fas fa-phone absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Input Pesan -->
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-dark mb-1.5">Pesan</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Masukkan pesan atau pertanyaan Anda..."
+                        class="w-full p-4 border border-gray-300 rounded-xl outline-none text-sm focus:border-primary focus:ring-2 focus:ring-orange-100 transition duration-200 resize-none"></textarea>
+                </div>
+
+                <!-- Tombol Submit -->
+                <button type="submit" formaction="thankyou.html"
+                    class="w-full bg-primary hover:bg-primaryHover text-white py-3.5 px-6 rounded-xl font-bold shadow-lg shadow-orange-500/20 transform active:scale-[0.98] transition duration-200 flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane text-xs"></i> Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Khusus Halaman Contact Us -->
+    <footer class="bg-dark text-white py-8 text-center border-t border-gray-700">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-xs text-gray-400">&copy; 2025 CingMotor. Semua Hak Dilindungi.</p>
+            <div class="flex justify-center space-x-6 mt-3">
+                <a href="#" class="text-white hover:text-primary transition duration-300 text-base"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-primary transition duration-300 text-base"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white hover:text-primary transition duration-300 text-base"><i
+                        class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
 </body>
+
 </html>
